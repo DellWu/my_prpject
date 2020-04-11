@@ -1,0 +1,64 @@
+<!--<script>
+    function fn(data) {
+        if (!data) {
+            location.href = 'index.html'
+        }
+    }
+</script>
+<script src="/judge"></script>-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户页面</title>
+    <script src="assets/vendors/template-web.js"></script>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        .headImg {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="dv"></div>
+<script src="assets/vendors/jQuery_min.js"></script>
+<script type="text/html" id="enterTpl">
+    <ul>
+        {{each doc}}
+        <li>
+            {{if $value.imgUrl != 'null'}}
+            <img src="{{$value.imgUrl}}" alt="" class="headImg">
+            {{else}}
+            <img src="./assets/img/bg.jpg" alt="" class="headImg">
+            {{/if}}
+        </li>
+        <li>{{$value.username}}</li>
+        {{/each}}
+    </ul>
+</script>
+<script>
+    var dv = document.querySelector('.dv');
+    var uid = location.search.split('=')[1];
+    $.ajax({
+        type: 'post',
+        url: '/gain',
+        data: {
+            ids: uid
+        },
+        success: function (doc) {
+            console.log(doc);
+            var html = template('enterTpl', {doc});
+            dv.innerHTML = html;
+        }
+    })
+</script>
+</body>
+</html>

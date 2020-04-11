@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my_project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/vendors/jQuery_min.js"></script>
+    <script src="./assets/vendors/template-web.js"></script>
+</head>
+<body>
+<div class="register">
+    <span class="iconfont userIcon">&#xe61b;</span>
+    <form id="enter">
+        <div class="form-group">
+            <label for="exampleInputEmail1">用户名</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" autocomplete="off"
+                   name="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                   name="password">
+        </div>
+        <button type="submit" class="btn btn-default enter">登录</button>
+        <button type="button" class="btn btn-default login" id="login">注册</button>
+    </form>
+</div>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/enter.js"></script>
+<script type="text/html" id="loginCut">
+    <form id="form">
+        <div class="form-group has-success has-feedback username">
+            <label class="control-label" for="inputWarning1">注册邮箱</label>
+            <input type="text" class="form-control username" id="inputWarning1" aria-describedby="inputWarning2Status"
+                   autocomplete="off" name="username" placeholder="输入邮箱">
+            <span class="glyphicon glyphicon-ok form-control-feedback usernameShow" aria-hidden="true"></span>
+            <span class="span span1"></span>
+        </div>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="inputWarning2">注册密码</label>
+            <input type="password" class="form-control password" id="inputWarning2"
+                   aria-describedby="inputWarning2Status"
+                   name="password" placeholder="注册密码">
+            <span class="glyphicon glyphicon-ok form-control-feedback passwordShow" aria-hidden="true"></span>
+            <span class="span span2"></span>
+        </div>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="inputWarning3">重复密码</label>
+            <input type="password" class="form-control verifyPassword" id="inputWarning3"
+                   aria-describedby="inputWarning2Status"
+                   name="verifyPassword" placeholder="重复密码">
+            <span class="glyphicon glyphicon-ok form-control-feedback verifyPasswordShow" aria-hidden="true"></span>
+            <span class="span span3"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">上传头像</label>
+            <input type="file" id="exampleInputFile" accept="image/png,image/jpeg,image/gif" name="image">
+            <input type="hidden" value="null" class="hiddenImgUrl" name="imgUrl">
+            <p class="help-block">请上传为png,jpg,jpeg格式的图像</p>
+        </div>
+        <div class="btnd">
+            <button type="button" class="btn btn-default registerBtn" id="btn">返回登录</button>
+            <button type="button" class="btn btn-default registerBtn" id="btnLogin">注册</button>
+        </div>
+    </form>
+</script>
+</body>
+</html>
